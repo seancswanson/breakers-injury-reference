@@ -1,7 +1,7 @@
 /* empty css                                 */
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, f as addAttribute, s as spreadAttributes, g as createAstro } from '../chunks/astro/server_tqnbfIGh.mjs';
 import 'kleur/colors';
-import { b as $$Link, $ as $$Container, a as $$Layout } from '../chunks/Layout_CiGDM7xt.mjs';
+import { b as $$Link, $ as $$Container, a as $$Layout } from '../chunks/Layout_D5oFyoPH.mjs';
 import { $ as $$Icon } from '../chunks/Icon_BwLPhBGC.mjs';
 import '@astrojs/internal-helpers/path';
 import { A as AstroError, f as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, E as ExpectedImageOptions, g as ExpectedImage, h as ExpectedNotESMImage, r as resolveSrc, i as isRemoteImage, j as isESMImportedImage, k as isLocalService, D as DEFAULT_HASH_PROPS, l as InvalidImageService, m as ImageMissingAlt } from '../chunks/astro/assets-service_CsQcBWAb.mjs';

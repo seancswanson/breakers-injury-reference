@@ -4,7 +4,7 @@ import 'kleur/colors';
 import pLimit from 'p-limit';
 import { A as AstroError, U as UnknownContentCollectionError } from '../chunks/astro/assets-service_CsQcBWAb.mjs';
 import { prependForwardSlash } from '@astrojs/internal-helpers/path';
-import { $ as $$Container, a as $$Layout } from '../chunks/Layout_CiGDM7xt.mjs';
+import { $ as $$Container, a as $$Layout } from '../chunks/Layout_D5oFyoPH.mjs';
 export { renderers } from '../renderers.mjs';
 
 function createCollectionToGlobResultMap({
