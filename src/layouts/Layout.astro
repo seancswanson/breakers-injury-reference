@@ -5,6 +5,9 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
 
+import '../styles/tailwind.css';
+import '../styles/typebase.css';
+import "../styles/global.scss";
 
 
 export interface Props {
@@ -21,8 +24,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "The Breaker's Injury Reference"
+  : "The Breaker's Injury Reference";
 ---
 
 <!DOCTYPE html>
@@ -36,18 +39,13 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="The Breaker's Injury Reference empowers dancers with knowledge to protect their bodies while perfecting their craft. Explore 3D models, learn about injury risks, and discover preventive techniques for a sustainable dance career."
       canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `${makeTitle}`,
           image: resolvedImageWithDomain,
         },
         image: {
@@ -57,6 +55,8 @@ const makeTitle = title
     />
   </head>
   <body>
+    <div class="grain-overlay"></div>
+
     <Navbar />
     <slot />
     <Footer />
@@ -69,3 +69,19 @@ const makeTitle = title
     </style>
   </body>
 </html>
+<style>
+	.grain-overlay {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  pointer-events: none;
+	  background-image: url(/grain-uniform.png);
+	  background-image: url(/grain.png);
+	  background-repeat: repeat;
+	  background-size: 150px;
+	  opacity: 0.1;
+	  z-index: 999;
+	}
+  </style>

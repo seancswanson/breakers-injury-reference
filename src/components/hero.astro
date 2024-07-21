@@ -6,26 +6,38 @@ import { Icon } from "astro-icon/components";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  class="grid lg:grid-cols-[2fr_1fr] place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="md:order-1 hidden md:block relative">
     <Picture
       src={heroImage}
-      alt="Astronaut in the air"
+      alt="One Handed Handstand Diagram"
       widths={[200, 400, 600]}
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
       format="avif"
+      
+      class="rounded-lg shadow-lg  border border-black"
     />
+    <div
+      class="w-[50%] h-[95%] border border-black bg-white absolute top-1/2 translate-y-[-50%] right-[-10px] rounded-lg -z-10 shadow-lg"
+>
+    </div>
+    <div
+    class="w-[50%] h-[90%] border border-black bg-white absolute top-1/2 translate-y-[-50%] right-[-20px] rounded-lg -z-20  shadow-lg"
+>
+  </div>
   </div>
   <div>
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      Train Smarter, <br>Dance Longer
     </h1>
+    <h2>Your interactive guide to injury prevention in dance</h2>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
-      create any website with this starter.
+      The Breaker's Injury Reference empowers dancers with knowledge to protect
+      their bodies while perfecting their craft. Explore 3D models, learn about
+      injury risks, and discover preventive techniques for a sustainable dance
+      career.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -35,8 +47,7 @@ import { Icon } from "astro-icon/components";
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-         Download for Free
+        Get Started
       </Link>
       <Link
         size="lg"
@@ -46,7 +57,7 @@ import { Icon } from "astro-icon/components";
         class="flex gap-1 items-center justify-center"
         target="_blank">
         <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
+        GitHub Repo
       </Link>
     </div>
   </div>

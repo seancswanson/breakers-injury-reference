@@ -1,0 +1,57 @@
+
+:root[data-theme="dark"] {
+  --background-color: #121212;
+  --color: #fff;
+  --heading-color: #f1f1f1;
+  --link-color: #de9906;
+  --link-visited-color: #966807;
+  --code-background-color: #252525;
+  --border-color: #eee;
+  --theme-slider-initial-transform: translateX(24px);
+  --invert: invert(1);
+  --mix-blend-mode: color-dodge;
+  --sun-icon-fill: #fff; /* For dark theme */
+  --moon-icon-fill: transparent; /* For dark theme */
+  --scrollbar-thumb-color: #4d4d4d;
+  --scrollbar-track-color: #2d2d2d;
+
+  .scrollbar {
+    @apply scrollbar-track-zinc-900 scrollbar-thumb-zinc-700;
+  }
+}
+:root[data-theme="light"] {
+  --background-color: #e4e5f1;
+  --invert: initial;
+  --mix-blend-mode: initial;
+  --color: #484b6a444;
+  --border-color: #222;
+  --heading-color: #222;
+  --link-color: #3273dc;
+  --link-visited-color: #193c75;
+  --code-background-color: #c7c7c7;
+  --theme-slider-initial-transform: 0px;
+  --sun-icon-fill: transparent; /* For light theme */
+  --moon-icon-fill: #000; /* For light theme */
+  --scrollbar-thumb-color: #b3b3b3;
+  --scrollbar-track-color: #e0e0e0;
+
+  .scrollbar {
+    @apply scrollbar-track-zinc-200 scrollbar-thumb-zinc-400;
+  }
+}
+
+	html {
+		background: var(--bg-color);
+		background-size: 224px;
+	}
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  a svg {
+    color:#ff9035;
+  }
