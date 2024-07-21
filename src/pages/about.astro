@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -12,46 +11,58 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="About">
+  <main>
+
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
-    </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
-            </div>
+    <header>
+      <h1>About The Breaker's Injury Reference</h1>
+  </header>
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+      <section>
+          <h2>Our Mission</h2>
+          <p>The Breaker's Injury Reference is an open-source project dedicated to helping breakdancers understand and prevent common injuries. Our mission is to provide accessible, visual information about the anatomical stress points in various breaking moves, potential injuries, and prevention strategies.</p>
+      </section>
+
+      <section>
+          <h2>What We Offer</h2>
+          <ul class="list-disc">
+            <li>Basic 3D models highlighting stress points for common breaking moves</li>
+              <li>Fundamental anatomy guides relevant to breakdancing</li>
+              <li>General training tips for injury prevention</li>
+              <li>Community forum for discussion and sharing experiences</li>
+          </ul>
+      </section>
+
+      <section>
+          <h2>How It Works</h2>
+          <p>We use a specialized AI prompt to generate initial data for each breaking move. This data includes:</p>
+          <ol class="list-disc">
+            <li>Areas to highlight on a 3D human model (muscles, joints, etc.)</li>
+              <li>Potential injuries associated with each highlighted area</li>
+              <li>Causes and simple remedies for each potential injury</li>
+          </ol>
+          <p>This AI-generated data serves as a starting point for our content. In future iterations, all information will be refined and verified by medical experts and experienced breakers to ensure accuracy and relevance.</p>
+      </section>
+
+      <section>
+          <h2>Open Source and Community-Driven</h2>
+          <p>The Breaker's Injury Reference is an open-source project, meaning anyone can contribute to its development. We welcome contributions in areas such as:</p>
+          <ul class="list-disc">
+              <li>3D modeling and animation</li>
+              <li>Web development (frontend and backend)</li>
+              <li>Content creation and prompt engineering</li>
+              <li>Medical expertise for content verification (future stages)</li>
+          </ul>
+          <p>If you're interested in contributing, please check our GitHub repository for more information.</p>
+      </section>
+
+      <section class="disclaimer">
+          <h2>Disclaimer</h2>
+          <p>The information provided by The Breaker's Injury Reference is for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition or injury.</p>
+      </section>
+  
+
   </Container>
+</main>
 </Layout>

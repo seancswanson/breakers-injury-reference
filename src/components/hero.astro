@@ -1,4 +1,5 @@
 ---
+// Boilerplate from https://github.com/surjithctly/astroship/
 import { Picture } from "astro:assets";
 import heroImage from "assets/hero.png";
 import Link from "@components/ui/link.astro";
@@ -6,7 +7,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <main
-  class="grid lg:grid-cols-[2fr_1fr] place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  class="grid lg:grid-cols-[2fr_1fr] place-items-center pt-16 pb-8 md:pt-12 sm:gap-4 md:pb-24">
   <div class="md:order-1 hidden md:block relative">
     <Picture
       src={heroImage}
@@ -15,17 +16,20 @@ import { Icon } from "astro-icon/components";
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
       format="avif"
-      
       class="rounded-lg shadow-lg  border border-black"
     />
     <div
-      class="w-[50%] h-[95%] border border-black bg-white absolute top-1/2 translate-y-[-50%] right-[-10px] rounded-lg -z-10 shadow-lg"
+      class="w-[50%] h-[95%] border border-black opacity-75 bg-white absolute top-1/2 translate-y-[-50%] right-[-10px] rounded-lg -z-10 shadow-lg"
 >
     </div>
     <div
-    class="w-[50%] h-[90%] border border-black bg-white absolute top-1/2 translate-y-[-50%] right-[-20px] rounded-lg -z-20  shadow-lg"
+    class="w-[50%] h-[90%] border border-black opacity-25 bg-white absolute top-1/2 translate-y-[-50%] right-[-20px] rounded-lg -z-20  shadow-lg"
 >
   </div>
+  <div
+  class="w-[50%] h-[85%] border border-black opacity-10 bg-white absolute top-1/2 translate-y-[-50%] right-[-30px] rounded-lg -z-30  shadow-lg"
+>
+</div>
   </div>
   <div>
     <h1
@@ -33,7 +37,7 @@ import { Icon } from "astro-icon/components";
       Train Smarter, <br>Dance Longer
     </h1>
     <h2>Your interactive guide to injury prevention in dance</h2>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+    <p class="text-lg mt-4 text-slate-800 max-w-xl">
       The Breaker's Injury Reference empowers dancers with knowledge to protect
       their bodies while perfecting their craft. Explore 3D models, learn about
       injury risks, and discover preventive techniques for a sustainable dance
