@@ -23,9 +23,11 @@ import Layout from "@layouts/Layout.astro";
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {Array(6).fill(null).map((_, index) => (
-        <MovementCard key={index} />
-        ))}
+        {
+          Array(6)
+            .fill(null)
+            .map((_, index) => <MovementCard key={index} />)
+        }
       </div>
     </div>
   </Container>

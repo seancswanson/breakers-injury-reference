@@ -10,7 +10,7 @@ export class ModelViewer {
   private clock: THREE.Clock;
   private controls: OrbitControls;
   private isPlaying: boolean = true;
-  private speed: number = .2;
+  private speed: number = 0.2;
 
   constructor(container: HTMLElement) {
     this.scene = new THREE.Scene();
@@ -32,7 +32,7 @@ export class ModelViewer {
     container.appendChild(this.renderer.domElement);
 
     // Set initial camera position (zoomed out on Z-axis)
-    this.camera.position.set(0, 0.75, 2);  // Increased Z value
+    this.camera.position.set(0, 0.75, 2); // Increased Z value
     this.camera.lookAt(0, 0.75, 0);
 
     // Set up OrbitControls
@@ -55,7 +55,7 @@ export class ModelViewer {
     this.scene.background = gradientTexture;
 
     // Add floor
-    const floorGeometry = new THREE.PlaneGeometry(3, 3);  // Increased floor size
+    const floorGeometry = new THREE.PlaneGeometry(3, 3); // Increased floor size
     const floorMaterial = new THREE.MeshStandardMaterial({
       color: "beige",
       roughness: 0.6,
@@ -67,7 +67,7 @@ export class ModelViewer {
     this.scene.add(floorMesh);
 
     // Add grid to the floor
-    const gridHelper = new THREE.GridHelper(3, 10, 0x000000, 0x000000);  // Increased grid size and density
+    const gridHelper = new THREE.GridHelper(3, 10, 0x000000, 0x000000); // Increased grid size and density
     gridHelper.position.y = 0.01; // Slightly above the floor to prevent z-fighting
     this.scene.add(gridHelper);
 
@@ -127,7 +127,7 @@ export class ModelViewer {
 
         // Set final camera position after a short delay
         setTimeout(() => {
-          this.camera.position.set(0, desiredHeight / 2, desiredHeight * 2);  // Increased Z multiplier
+          this.camera.position.set(0, desiredHeight / 2, desiredHeight * 2); // Increased Z multiplier
           this.controls.target.set(0, desiredHeight / 2, 0);
           this.controls.update();
         }, 100);

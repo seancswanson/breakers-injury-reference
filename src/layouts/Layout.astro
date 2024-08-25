@@ -3,12 +3,11 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import '@fontsource-variable/bricolage-grotesque';
+import "@fontsource-variable/bricolage-grotesque";
 
-import '../styles/tailwind.css';
-import '../styles/typebase.css';
+import "../styles/tailwind.css";
+import "../styles/typebase.css";
 import "../styles/global.scss";
-
 
 export interface Props {
   title: string;
@@ -26,7 +25,7 @@ const makeTitle = title
   : "The Breaker's Injury Reference";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -66,17 +65,17 @@ const makeTitle = title
   </body>
 </html>
 <style>
-	.grain-overlay {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  pointer-events: none;
-	  background-image: url(/grain.png);
-	  background-repeat: repeat;
-	  background-size: 150px;
-	  opacity: 0.1;
-	  z-index: 999;
-	}
-  </style>
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url(/grain.png);
+    background-repeat: repeat;
+    background-size: 150px;
+    opacity: 0.1;
+    z-index: 999;
+  }
+</style>
