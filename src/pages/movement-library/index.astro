@@ -1,0 +1,32 @@
+---
+import Container from "@components/container.astro";
+import { Image } from "astro:assets";
+import MovementCard from "@components/movementCard.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="">
+  <Container>
+    <h1>Movement Library</h1>
+    <h2 class="mb-20">Select a move and step through each motion in 3D</h2>
+    <div class="flex flex-col md:flex-row items-start justify-center gap-8">
+      <div class="sidebar border-r-2 border-gray-200">
+        <div class="sidebar-content pl-2 pr-8">
+          <span>Category</span>
+          <ul class="">
+            <li class="">Power</li>
+            <li class="">Freeze</li>
+            <li class="">Toprock</li>
+            <li class="">Footwork</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {Array(6).fill(null).map((_, index) => (
+        <MovementCard key={index} />
+        ))}
+      </div>
+    </div>
+  </Container>
+</Layout>

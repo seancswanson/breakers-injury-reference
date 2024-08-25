@@ -1,0 +1,78 @@
+---
+import Container from "@components/container.astro";
+import { Image } from "astro:assets";
+import MovementCard from "@components/movementCard.astro";
+import Layout from "@layouts/Layout.astro";
+import ModelViewer from "@components/ModelViewer.astro";
+
+const risks = [
+  "Wrist strain",
+  "Shoulder dislocation",
+  "Rotator cuff injuries",
+  "Elbow stress",
+  "Neck strain",
+  "Lower back injuries",
+  "Dizziness",
+];
+---
+
+<Layout title="1990 - Bboy Move | Breakers Injury Reference">
+  <Container>
+    <h1 class="text-4xl font-bold mb-6">1990</h1>
+    <div class="flex flex-col md:flex-row gap-8 w-full">
+      <ModelViewer />
+      <div class="move-details w-full md:w-1/2">
+        <div class="bg-white shadow rounded-lg p-6 mb-8">
+          <h2 class="text-2xl font-semibold mb-4 mt-0">Risks</h2>
+          <div class="flex flex-wrap">
+            {
+              risks.map((risk) => (
+                <span class="risk-badge bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold mr-2 mb-2 cursor-pointer hover:bg-gray-300 transition-colors duration-200">
+                  {risk}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg p-6 mb-8">
+          <h2 class="text-2xl font-semibold mb-4 mt-0">Injury Prevention</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700">
+            <li>
+              Strengthen wrists, forearms, and grip through targeted exercises
+            </li>
+            <li>Develop shoulder stability and rotator cuff strength</li>
+            <li>
+              Practice proper alignment and form in handstands before attempting
+              spins
+            </li>
+            <li>
+              Gradually increase spin duration and speed to build endurance and
+              control
+            </li>
+            <li>Incorporate exercises to improve core strength and balance</li>
+            <li>
+              Regularly stretch to maintain flexibility, especially in shoulders
+              and wrists
+            </li>
+            <li>Use protective gear like wrist supports when practicing</li>
+            <li>Ensure adequate warm-up before practicing 1990s</li>
+            <li>
+              Learn and practice proper falling techniques to minimize injury
+              risk
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <h2 class="text-2xl font-semibold mb-4">Related Moves</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <MovementCard title="Handstand" difficulty="Intermediate" />
+        <MovementCard title="2000" difficulty="Advanced" />
+        <MovementCard title="Elbow Spin" difficulty="Intermediate" />
+      </div>
+    </div>
+  </Container>
+</Layout>

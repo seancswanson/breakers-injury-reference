@@ -1,0 +1,76 @@
+---
+---
+<div class="shadow-inner lg:w-1/2 overflow-hidden rounded relative" id="model-container">
+    <div id="controls" class="absolute top-2 right-2 flex items-center space-x-2">
+        <button id="playPauseBtn" class="bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+          </svg>
+        </button>
+        <div class="flex items-center bg-black bg-opacity-50 rounded-full px-2 py-1">
+          <input type="range" id="speedSlider" min="0.1" max="2" step="0.1" value="0.2" class="w-16 h-1 bg-white rounded-full appearance-none cursor-pointer">
+          <span id="speedValue" class="text-xs text-white font-medium ml-2 w-8 text-center">0.2x</span>
+        </div>
+      </div>
+  </div>
+  
+  <script>
+  import { ModelViewer } from '../utils/ModelViewer';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('model-container');
+    if (container) {
+      const viewer = new ModelViewer(container);
+      
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const speedSlider = document.getElementById('speedSlider') as HTMLInputElement;
+      const speedValue = document.getElementById('speedValue');
+  
+      playPauseBtn?.addEventListener('click', () => {
+        viewer.togglePlayPause();
+        const icon = playPauseBtn.querySelector('svg');
+        if (icon) {
+          icon.innerHTML = icon.innerHTML.includes('M14.752')
+            ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />'
+            : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />';
+        }
+      });
+  
+      speedSlider?.addEventListener('input', (e) => {
+        const speed = parseFloat((e.target as HTMLInputElement).value);
+        viewer.setSpeed(speed);
+        if (speedValue) speedValue.textContent = `${speed.toFixed(1)}x`;
+      });
+    }
+  });
+  </script>
+  
+  <style>
+  #model-container {
+    height: 700px;
+  }
+  
+  /* Custom styles for the range input */
+  #speedSlider {
+    -webkit-appearance: none;
+    background: transparent;
+  }
+  
+  #speedSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+  
+  #speedSlider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+  </style>

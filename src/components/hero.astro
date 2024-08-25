@@ -1,6 +1,6 @@
 ---
 // Boilerplate from https://github.com/surjithctly/astroship/
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import heroImage from "assets/hero.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
 <main
   class="grid lg:grid-cols-[2fr_1fr] place-items-center pt-16 pb-8 md:pt-12 sm:gap-4 md:pb-24">
   <div class="md:order-1 hidden md:block relative">
-    <Picture
+    <Image
       src={heroImage}
       alt="One Handed Handstand Diagram"
       widths={[200, 400, 600]}
