@@ -14,8 +14,6 @@ export interface Props {
   title: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
   Astro.site
@@ -40,10 +38,8 @@ const makeTitle = title
     <SEO
       title={makeTitle}
       description="The Breaker's Injury Reference empowers dancers with knowledge to protect their bodies while perfecting their craft. Explore 3D models, learn about injury risks, and discover preventive techniques for a sustainable dance career."
-      canonical={canonicalURL}
       openGraph={{
         basic: {
-          url: canonicalURL,
           type: "website",
           title: `${makeTitle}`,
           image: resolvedImageWithDomain,
